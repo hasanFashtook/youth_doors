@@ -513,6 +513,12 @@ img {
 	justify-content: flex-end;
 	gap: 1rem;
 	padding-bottom: 1rem;
+	margin-top: 6rem;
+}
+@media (min-width: 992px){
+	.doors-section {
+		margin-top: 0;
+	}
 }
 
 .main-div {
