@@ -25,12 +25,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
 	background-color: var(--quaternary-color);
-	border-radius: 8px;
-
+	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	-ms-border-radius: 8px;
 	-o-border-radius: 8px;
-	-webkit-border-radius: 8px;
+	border-radius: 8px;
 }
 
 * {
@@ -205,11 +204,11 @@ img {
 	position: relative;
 	margin-left: 5px;
 	pointer-events: none;
-	transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
 
 .header .menu>.menu-item:hover>a .plus {
@@ -244,13 +243,13 @@ img {
 
 @media(min-width: 992px) {
 	.header .menu>.menu-item-has-children:hover>.sub-menu {
-		transform: translateY(-1rem);
 		opacity: 1;
 		visibility: visible;
 		-webkit-transform: translateY(-1rem);
 		-moz-transform: translateY(-1rem);
 		-ms-transform: translateY(-1rem);
 		-o-transform: translateY(-1rem);
+		transform: translateY(-1rem);
 	}
 
 	.header .menu>.menu-item-has-children:hover>a .plus:after {
@@ -378,11 +377,11 @@ img {
 
 .home-section .box {
 	text-align: center;
-	border-radius: 11px;
 	-webkit-border-radius: 11px;
 	-moz-border-radius: 11px;
 	-ms-border-radius: 11px;
 	-o-border-radius: 11px;
+	border-radius: 11px;
 }
 
 @media (min-width: 768px) {
@@ -399,20 +398,20 @@ img {
 
 .home-section .box .image img {
 	transition: 0.5s;
-	transform: perspective(1000px) rotateY(0deg);
 	-webkit-transform: perspective(1000px) rotateY(0deg);
 	-moz-transform: perspective(1000px) rotateY(0deg);
 	-ms-transform: perspective(1000px) rotateY(0deg);
 	-o-transform: perspective(1000px) rotateY(0deg);
+	transform: perspective(1000px) rotateY(0deg);
 	transform-origin: 0% 50%;
 }
 
 .home-section .box .image:hover img {
-	transform: perspective(1000px) rotateY(-30deg);
 	-webkit-transform: perspective(1000px) rotateY(-30deg);
 	-moz-transform: perspective(1000px) rotateY(-30deg);
 	-ms-transform: perspective(1000px) rotateY(-30deg);
 	-o-transform: perspective(1000px) rotateY(-30deg);
+	transform: perspective(1000px) rotateY(-30deg);
 }
 
 @media (min-width: 768px) {
@@ -425,7 +424,6 @@ img {
 	position: absolute;
 	bottom: 2rem;
 	left: 50%;
-	transform: translateX(-50%);
 	font-size: 2rem;
 	color: white;
 	width: 5rem;
@@ -433,6 +431,7 @@ img {
 	display: grid;
 	place-items: center;
 	animation: bounce 2s linear infinite;
+
 }
 
 /* responsive */
@@ -592,19 +591,19 @@ img {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	transition: 0.3s;
 	-webkit-transition: 0.3s;
 	-moz-transition: 0.3s;
 	-ms-transition: 0.3s;
 	-o-transition: 0.3s;
+	transition: 0.3s;
 }
 
 .doors-section .doors .container>div:hover {
-	transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .doors-section .doors a {
@@ -669,19 +668,19 @@ section.about .box {
 }
 
 section.about .box a img {
-	transition: 0.3s;
 	-webkit-transition: 0.3s;
 	-moz-transition: 0.3s;
 	-ms-transition: 0.3s;
 	-o-transition: 0.3s;
+	transition: 0.3s;
 }
 
 section.about .box a:hover img {
-	transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 section.about .box img {
@@ -764,11 +763,11 @@ section.contact form textarea::placeholder {
 	color: #C3C3C3;
 	font-size: 1.125rem;
 	font-weight: 700;
-	transition: 0.3s;
 	-webkit-transition: 0.3s;
 	-moz-transition: 0.3s;
 	-ms-transition: 0.3s;
 	-o-transition: 0.3s;
+	transition: 0.3s;
 }
 
 section.contact form div input:focus::placeholder,
@@ -788,11 +787,11 @@ section.contact form div button {
 
 section.contact form div button:hover {
 	background-color: #c67f2c;
-	transition: 0.3s;
 	-webkit-transition: 0.3s;
 	-moz-transition: 0.3s;
 	-ms-transition: 0.3s;
 	-o-transition: 0.3s;
+	transition: 0.3s;
 }
 
 svg.purple {
@@ -910,17 +909,26 @@ footer .container .image img {
 	50%,
 	80%,
 	100% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
+		-webkit-transform: translateX(-50%) translateY(0);
+		-moz-transform: translateX(-50%) translateY(0);
+		-ms-transform: translateX(-50%) translateY(0);
+		-o-transform: translateX(-50%) translateY(0);
+		transform: translateX(-50%) translateY(0);
 	}
 
 	40% {
-		-webkit-transform: translateY(-30px);
-		transform: translateY(-30px);
+		-webkit-transform: translateX(-50%) translateY(-30px);
+		-moz-transform: translateX(-50%) translateY(-30px);
+		-ms-transform: translateX(-50%) translateY(-30px);
+		-o-transform: translateX(-50%) translateY(-30px);
+		transform: translateX(-50%) translateY(-30px);
 	}
 
 	60% {
-		-webkit-transform: translateY(-15px);
-		transform: translateY(-15px);
+		-webkit-transform: translateX(-50%) translateY(-15px);
+		-moz-transform: translateX(-50%) translateY(-15px);
+		-ms-transform: translateX(-50%) translateY(-15px);
+		-o-transform: translateX(-50%) translateY(-15px);
+		transform: translateX(-50%) translateY(-15px);
 	}
 }
