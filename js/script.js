@@ -1,13 +1,14 @@
-
-
 (() => {
 
   const openNavMenu = document.querySelector(".open-nav-menu"),
     closeNavMenu = document.querySelector(".close-nav-menu"),
     navMenu = document.querySelector(".nav-menu"),
     menuOverlay = document.querySelector(".menu-overlay"),
-    mediaSize = 991;
+    mediaSize = 991,
+    propertyRights = document.querySelector('.rights span'),
+    date = new Date();
 
+  propertyRights.innerHTML = `${date.getFullYear()}©`;
   openNavMenu.addEventListener("click", toggleNav);
   closeNavMenu.addEventListener("click", toggleNav);
   // close the navMenu by clicking outside
