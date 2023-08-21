@@ -25,11 +25,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
 	background-color: var(--quaternary-color);
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	-ms-border-radius: 8px;
-	-o-border-radius: 8px;
-	border-radius: 8px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
 }
 
 * {
@@ -528,7 +528,7 @@ img {
 	.header .menu>.menu-item>.sub-menu>.menu-item>a {
 		padding: 12px 45px;
 		color: #222222;
-		border-bottom: 1px solid #e4e4e4;
+		border-bottom: 1px solid #c8c8c8;
 	}
 
 	.header .close-nav-menu,
@@ -922,12 +922,6 @@ footer .container .info {
 	direction: rtl;
 }
 
-/* @media (min-width:768px) {
-	.contact-information {
-		align-items: self-start;
-	}
-} */
-
 .contact-information li {
 	display: flex;
 	align-items: center;
@@ -984,5 +978,53 @@ footer .container .image img {
 		-ms-transform: translateX(-50%) translateY(-15px);
 		-o-transform: translateX(-50%) translateY(-15px);
 		transform: translateX(-50%) translateY(-15px);
+	}
+}
+
+
+/* style doors pages */
+section.door {
+	min-height: 100vh;
+	background-image: url('../img/landingBackground.png');
+	background-position: center;
+	background-size: cover;
+	border-top: 1px solid transparent;
+}
+
+.doorIntro {
+	margin-top: 8rem;
+	background: rgba(217, 217, 217, 0.50);
+}
+
+.doorIntro .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.25rem;
+	padding: 1.25rem;
+}
+
+@media (min-width:768px) {
+	.doorIntro .container {
+		flex-direction: row-reverse;
+	}
+}
+
+.doorIntro__door {
+	width: 10rem;
+}
+
+.doorIntro__content {
+	color: #FFF;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+	direction: rtl;
+	flex: 5;
+}
+
+@media (min-width:768px) {
+	.doorIntro__content {
+		text-align: right;
 	}
 }
