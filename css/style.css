@@ -16,7 +16,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-	width: 1rem;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -179,7 +179,7 @@ img {
 	display: block;
 	padding: 12px;
 	font-size: 16px;
-	color: #000000;
+	color: var(--primary-color);
 	text-transform: capitalize;
 	font-weight: 600;
 	transition: all 0.3s ease;
@@ -222,7 +222,7 @@ img {
 
 .header .menu>.menu-item>.sub-menu>.menu-item>a:hover,
 .header .menu>.menu-item:hover>a {
-	color: var(--primary-color);
+	background-color: var(--tertiary-color);
 }
 
 .header .menu>.menu-item>.sub-menu {
@@ -266,7 +266,7 @@ img {
 	padding: 10px 20px;
 	font-size: 16px;
 	font-weight: 600;
-	color: #222222;
+	color: var(--primary-color);
 	transition: all 0.3s ease;
 	text-transform: capitalize;
 }
@@ -384,6 +384,13 @@ img {
 	border-radius: 11px;
 }
 
+.home-section .box .alternative-text {
+	color: #FFF;
+	text-align: center;
+	font-size: 2.375rem;
+	font-weight: 700;
+}
+
 @media (min-width: 768px) {
 	.home-section .box.text {
 		max-width: 30rem;
@@ -422,7 +429,7 @@ img {
 
 .home-section>a {
 	position: absolute;
-	bottom: 2rem;
+	bottom: 1rem;
 	left: 50%;
 	font-size: 2rem;
 	color: white;
@@ -816,15 +823,9 @@ footer {
 
 footer .container .info {
 	display: grid;
-	grid-template-columns: minmax(16rem, 1fr);
+	grid-template-areas: "media" "sponsor" "contact";
 	gap: 1.5rem;
 	margin: 5rem auto 2.5rem;
-}
-
-@media (min-width: 768px) {
-	footer .container .info {
-		grid-template-columns: repeat(3, minmax(14rem, 1fr));
-	}
 }
 
 .sponsor,
@@ -837,12 +838,51 @@ footer .container .info {
 	justify-content: center;
 }
 
+.sponsor {
+	grid-area: sponsor;
+	flex-direction: row;
+}
+
+.social-media {
+	grid-area: media;
+}
+
+.contact-information {
+	grid-area: contact;
+}
+
+@media (min-width: 768px) {
+	footer .container .info {
+		grid-template-areas: "media media" "sponsor contact";
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.sponsor {
+		flex-direction: column;
+	}
+}
+
+@media (min-width: 992px) {
+	footer .container .info {
+		grid-template-areas: "sponsor media contact";
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
 .social-media>p {
 	border-bottom: 2px solid;
 	padding-bottom: 0.5rem;
 	text-align: center;
-	font-size: 1.25rem;
-	font-weight: 700;
+	font-size: 0.875rem;
+	font-weight: 400;
+	width: 15rem;
+}
+
+@media (min-width:768px) {
+	.social-media>p {
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
 }
 
 .social-media .social-media-links {
@@ -865,30 +905,44 @@ footer .container .info {
 	flex: 6;
 	color: #FFF;
 	text-align: center;
-	font-weight: 700;
+	font-weight: 400;
+}
+
+@media (min-width:768px) {
+	.social-media .rights>p {
+		font-weight: 700;
+	}
 }
 
 .social-media .rights img {
-	width: 3rem;
+	width: 5rem;
 }
 
 .contact-information {
 	direction: rtl;
 }
 
-@media (min-width:768px) {
+/* @media (min-width:768px) {
 	.contact-information {
 		align-items: self-start;
 	}
-}
+} */
 
 .contact-information li {
 	display: flex;
 	align-items: center;
 	gap: 5px;
-	font-size: 1rem;
-	font-weight: 700;
+	font-size: 0.875rem;
+	font-weight: 400;
 }
+
+@media (min-width:768px) {
+	.contact-information li {
+		font-size: 1rem;
+		font-weight: 700;
+	}
+}
+
 
 .sponsor img {
 	width: 9.375rem;
