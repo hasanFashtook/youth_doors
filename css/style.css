@@ -493,11 +493,11 @@ img {
 	.header .menu>.menu-item>a {
 		color: #222222;
 		padding: 12px 15px;
-		border-bottom: 1px solid #e4e4e4;
+		border-bottom: 1px solid #c8c8c8;
 	}
 
 	.header .menu>.menu-item:first-child>a {
-		border-top: 1px solid #e4e4e4;
+		border-top: 1px solid #c8c8c8;
 	}
 
 	.header .menu>.menu-item>a .plus:before,
