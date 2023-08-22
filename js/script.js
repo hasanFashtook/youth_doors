@@ -64,6 +64,41 @@
       resizeFix();
     }
   });
-
 })();
 
+// validate email address
+const form = document.querySelector('form#contactForm');
+const input = document.querySelector('#contactForm input');
+const textarea = document.querySelector('#contactForm textarea');
+const pattern =  /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i; 
+
+function validateEmail(e){
+  if(!pattern.test(input.value)){
+    e.preventDefault();
+    input.value = ''
+    input.style.border = '2px solid red';
+    input.placeholder = 'البريد الإلكتروني غير صحيح';
+  }else if(textarea.value == ''){
+    e.preventDefault();
+    textarea.style.border = '2px solid red';
+    textarea.placeholder = 'حقل الرسالة فارغ';
+  }else{
+    input.style.border = '2px solid green';
+    textarea.style.border = '2px solid green';
+  }
+}
+
+[input,textarea].forEach(ele =>{
+  ele.addEventListener('click',()=>{
+    [input,textarea].forEach((ele)=>{
+      ele.style.border = '1px solid transparent'
+      if(ele.value == 'حقل الرسالة فارغ' || ele.value == 'البريد الإلكتروني غير صحيح'){
+        ele.value = '';
+        ele.style.color = '#222222';
+        ele.style.border = '2px solid transparent';
+      }
+    })
+  })
+})
+
+form.addEventListener('submit',e => validateEmail(e));

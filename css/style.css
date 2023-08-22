@@ -739,11 +739,36 @@ section.contact form {
 
 section.contact form textarea {
 	height: 7rem;
+	border: 1px solid;
+	border-color: transparent;
 	border-radius: 0.625rem;
 	outline: none;
 	resize: none;
 	padding: 1rem;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-ms-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	transition: 0.3s all;
 }
+
+/* section.contact form textarea[valid='false'],
+section.contact form input[valid='false'] {
+	border: 1px solid red;
+	color: red;
+}
+
+section.contact form textarea[valid='pending'],
+section.contact form input[valid='pending'] {
+	border: 1px solid transparent;
+	color: #222222;
+}
+
+section.contact form textarea[valid='true'],
+section.contact form input[valid='true'] {
+	border: 1px solid green;
+	color: green;
+} */
 
 
 section.contact form div {
@@ -761,8 +786,14 @@ section.contact form div button {
 	height: 3rem;
 	padding: 0 1rem;
 	border-radius: 0.625rem;
-	border: none;
 	outline: none;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-ms-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	transition: 0.3s all;
+	border: 1px solid;
+	border-color: transparent;
 }
 
 section.contact form div input::placeholder,
@@ -780,7 +811,16 @@ section.contact form textarea::placeholder {
 section.contact form div input:focus::placeholder,
 section.contact form textarea:focus::placeholder {
 	opacity: 0;
+}
 
+input::after {
+	content: '\f057';
+	font-family: 'Font Awesome 6 Brand';
+	color: blue;
+	font-weight: 900;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 section.contact form div button {
